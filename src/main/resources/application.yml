@@ -1,0 +1,33 @@
+
+
+spring:
+    main:
+#        banner-mode: "on"
+    application:
+        name: cruncher
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/test
+
+my:
+   servers:
+       - dev.bar.com
+       - foo.bar.com
+
+---
+
+spring:
+    profiles: development
+server:
+    port: 9001
+
+---
+
+spring:
+    profiles: production
+server:
+    port: 0
+
+
+
+
