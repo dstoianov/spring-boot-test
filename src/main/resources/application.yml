@@ -1,35 +1,47 @@
-
 spring:
+    profiles:
+        active: qa
     main:
-#        banner-mode: "on"
-    application:
-        name: cruncher
+        banner-mode: "off"
+
+countries:
+   servers:
+       - dev.default.com
+       - foo.default.com
+
+---
+spring:
+    profiles: qa
     datasource:
         driverClassName: org.sqlite.JDBC
-        url: jdbc:sqlite:test.db
-jpa:
-#    database-platform: that.custom.SQLiteDialect
-    hibernate:
-              ddl-auto: update
-my:
+        url: jdbc:sqlite:${user.dir}/src/main/resources/test-db-qa.sqlite
+
+countries:
    servers:
-       - dev.bar.com
-       - foo.bar.com
+       - dev.qa.com
+       - foo.qa.com
+---
+spring:
+    profiles: prod
+    datasource:
+        driverClassName: org.sqlite.JDBC
+        url: jdbc:sqlite:${user.dir}/src/main/resources/test-db-prod.sqlite
+
+countries:
+   servers:
+       - dev.prod.com
+       - foo.prod.com
 
 ---
-
 spring:
-    profiles: development
-server:
-    port: 9001
+    profiles: uat
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:${user.dir}/src/main/resources/db.h2.db
 
----
-
-spring:
-    profiles: production
-server:
-    port: 0
-
-
+countries:
+   servers:
+       - dev.prod.com
+       - foo.prod.com
 
 

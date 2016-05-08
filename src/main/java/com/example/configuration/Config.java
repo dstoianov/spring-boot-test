@@ -10,10 +10,10 @@ import java.util.List;
  * Created by denys.stoianov on 2016-05-06.
  */
 @Component
-@ConfigurationProperties(prefix = "my")
+@ConfigurationProperties(prefix = "countries")
 public class Config {
 
-    private List<String> servers = new ArrayList<String>();
+    private List<String> servers = new ArrayList<>();
 
     public List<String> getServers() {
         return this.servers;
