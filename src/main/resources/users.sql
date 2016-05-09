@@ -1,7 +1,7 @@
-CREATE TABLE `user` (
-  `id`          INT UNIQUE NOT NULL,
-  `name`        VARCHAR(40),
-  `description` VARCHAR(50),
+CREATE TABLE 'user' (
+  'id'          INT UNIQUE NOT NULL,
+  'name'        VARCHAR(40),
+  'description' VARCHAR(50),
   PRIMARY KEY (id)
 );
 INSERT INTO user VALUES (1, 'Mercedes', '2000');
