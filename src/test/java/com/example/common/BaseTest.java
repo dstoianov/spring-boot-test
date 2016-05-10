@@ -27,7 +27,7 @@ public class BaseTest extends AbstractTestNGSpringContextTests {
         int i = this.getClass().getName().lastIndexOf(".");
         String message = String.format("Test name '%s.%s' - %s", this.getClass().getName().substring(i + 1), m.getName(), getThreadId());
         log.info(message);
-        log.info("Service '{}'", helloWorldService.toString());
+        log.info("Service '{}' in '{}'", helloWorldService.toString(), getThreadId());
     }
 
     private String getThreadId() {

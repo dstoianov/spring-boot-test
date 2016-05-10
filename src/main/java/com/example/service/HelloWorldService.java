@@ -1,9 +1,11 @@
 package com.example.service;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
+@Scope(value = "prototype")
 public class HelloWorldService {
 
     @Value("${name:World}")
