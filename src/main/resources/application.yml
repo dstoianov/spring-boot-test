@@ -1,3 +1,5 @@
+spring.application.name: test-project
+
 spring:
     profiles:
         active: qa
@@ -15,6 +17,14 @@ spring:
     datasource:
         driverClassName: org.sqlite.JDBC
         url: jdbc:sqlite:${user.dir}/src/main/resources/test-db-qa.sqlite
+    jpa:
+#        database: SQLITE
+        database-platform: org.hibernate.dialect.SQLiteDialect
+        show-sql: true
+    hibernate:
+#        dialect: org.hibernate.dialect.SQLiteDialect
+        ddl-auto: update
+        show_sql: true
 
 countries:
    servers:
@@ -35,9 +45,15 @@ countries:
 ---
 spring:
     profiles: uat
+
     datasource:
         driverClassName: org.h2.Driver
         url: jdbc:h2:${user.dir}/src/main/resources/db.h2.db
+
+    hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        ddl-auto: update
+        show_sql: true
 
 countries:
    servers:
