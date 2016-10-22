@@ -5,7 +5,7 @@ import com.example.Application;
 import com.example.service.HelloWorldService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.ITestContext;
@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 
 @Slf4j
 //@ActiveProfiles(value = {"qa"})
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringBootTest(classes = Application.class)
 @TestPropertySource("classpath:/application-test.properties")
 public class BaseTest extends AbstractTestNGSpringContextTests {
 

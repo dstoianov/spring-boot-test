@@ -19,7 +19,7 @@ public class JpaTest extends BaseTest {
     private UserRepository userRepository;
 
     @Test
-    public void testName() throws Exception {
+    public void testName() {
         Optional<User> byId = userRepository.findById(1);
         log.info(byId.toString());
 

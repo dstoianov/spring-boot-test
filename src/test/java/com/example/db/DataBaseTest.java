@@ -22,6 +22,7 @@ public class DataBaseTest extends BaseTest {
 
     @Test
     public void testReadFromDB() throws Exception {
+//        http://www.dreamjava.com/content/spring-jdbc-example-query-update-queryForObject-queryForList-batchUpdate-beanPropertyRownMapper.html
         List<User> users = jdbcTemplate.query("SELECT * FROM USER", new BeanPropertyRowMapper(User.class));
 
         users.forEach(System.out::println);
